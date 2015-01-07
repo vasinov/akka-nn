@@ -19,7 +19,7 @@ class TrainerActor(perceptron: ActorRef, value: Vector[Float]) extends Actor {
       nOfResults += 1
 
       if (nOfResults >=  nOfExamples) {
-        println("Training stopped")
+        println("Training complete")
 
         perceptron ! Solve(value)
 
