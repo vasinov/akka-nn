@@ -11,5 +11,11 @@ class PerceptronActor extends Actor {
       p = newP
       sender ! ExampleTrained
     }
+
+    case Solve(v) =>
+      val answer = p.feedForward(v)
+
+      println(answer)
+      context.system.shutdown()
   }
 }
